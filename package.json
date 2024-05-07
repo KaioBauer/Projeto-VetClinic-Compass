@@ -1,0 +1,24 @@
+{
+  "name": "projeto-vetclinic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaioBauer/Projeto-VetClinic-Compass.git"
+  },
+  "author": "Kaio Guilherme Bauer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaioBauer/Projeto-VetClinic-Compass/issues"
+  },
+  "homepage": "https://github.com/KaioBauer/Projeto-VetClinic-Compass#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "sequelize": "^6.37.3",
+    "sqlite": "^5.1.1"
+  }
+}
