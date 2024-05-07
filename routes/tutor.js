@@ -49,7 +49,7 @@ router.delete('/:id', async (req, res) => {
     const tutor = await Tutor.findByPk(id);
     if (!tutor) throw new Error('Tutor not found');
     await tutor.destroy();
-    res.sendStatus(204);
+    res.sendStatus(200);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }

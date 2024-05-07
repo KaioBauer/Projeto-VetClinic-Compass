@@ -58,7 +58,7 @@ router.delete('/:petId/tutor/:tutorId', async (req, res) => {
       if (!pet) throw new Error('Pet not found for this tutor');
   
       await pet.destroy();
-      res.sendStatus(204);
+      res.sendStatus(200);
     } catch (error) {
       res.status(404).json({ error: error.message });
     }
