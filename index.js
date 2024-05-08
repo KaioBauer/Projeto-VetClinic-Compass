@@ -3,7 +3,7 @@ const app = express()
 const db = require('./db/connection')
 const bodyParser = require('body-parser')
 
-const PORT = 3000
+const PORT = process.env.PORT
 
 app.listen(PORT, function(){
     console.log(`O express etá rodando na porta ${PORT}`)
