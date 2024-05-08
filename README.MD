@@ -82,12 +82,12 @@ Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests o
 
 ## Recomendações
 
-Recomenda-se o uso do Postman para realmente ver a aplicação funcionando;
+Recomenda-se o uso do Postman para realmente ver a aplicação funcionando.
 
-Para isso:
--Inicie o Postman
--Entre em Headers
--Adicione um novo com as seguintes informações:
+Para isso
+1-Inicie o Postman
+2-Entre em Headers
+3-Adicione um novo com as seguintes informações:
     - Key = "Content-Type"
     - Value = "application/json"
 
