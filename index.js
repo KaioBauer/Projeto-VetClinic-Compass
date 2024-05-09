@@ -1,44 +1,39 @@
-require('dotenv').config()
+require("dotenv").config();
 
-const express = require('express')
-const app = express()
-const db = require('./db/connection')
-const bodyParser = require('body-parser')
+const express = require("express");
+const app = express();
+const db = require("./db/connection");
+const bodyParser = require("body-parser");
 
+const PORT = process.env.PORT;
 
-const PORT = process.env.PORT
-
-app.listen(PORT, function(){
-    console.log(`O express etá rodando na porta ${PORT}`)
-})
-
-
+app.listen(PORT, function () {
+  console.log(`O express etá rodando na porta ${PORT}`);
+});
 
 //body-parser
 
-app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //db connection
 
-db
-    .authenticate()
-    .then(() =>{
-        console.log('Conectado ao DB')
-    })
-    .catch(err => {
-        console.log("Ocorreu um erro ao iniciar o DB", err)
-    })
-
+db.authenticate()
+  .then(() => {
+    console.log("Conectado ao DB");
+  })
+  .catch((err) => {
+    console.log("Ocorreu um erro ao iniciar o DB", err);
+  });
 
 //routes
-app.get('/', (req, res) => {
-    res.send('Esta fuuncionando')
-})
+app.get("/", (req, res) => {
+  res.send("Esta fuuncionando");
+});
 
 //tutors routes
 
-app.use('/tutor', require('./routes/tutor'))
+app.use("/tutor", require("./routes/tutor"));
 
 //pet routes
 
-app.use('/pet', require('./routes/pet'))
+app.use("/pet", require("./routes/pet"));
