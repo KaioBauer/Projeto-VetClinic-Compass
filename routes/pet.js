@@ -27,23 +27,23 @@ router.post("/:tutorId", async (req, res) => {
 });
 
 // Atualizar pet
-router.put("/:petId/tutor/:tutorId", async (req, res) => {
+router.put('/:petId/tutor/:tutorId', async (req, res) => {
   const petId = req.params.petId;
   const tutorId = req.params.tutorId;
   const { name, species, carry, weight, date_of_birth } = req.body;
   try {
     const pet = await Pet.findOne({ where: { id: petId, TutorId: tutorId } });
-    if (!pet) throw new Error("Pet not found for this tutor");
-
-    await Pet.update({
+    if (!pet) {
+      throw new Error('Pet not found for this tutor');
+    }
+    await pet.update({
       name,
       species,
       carry,
       weight,
-      date_of_birth,
+      date_of_birth
     });
-
-    res.json(Pet);
+    res.json(pet);
   } catch (error) {
     res.status(404).json({ error: error.message });
   }
